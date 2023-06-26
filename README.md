@@ -51,11 +51,11 @@
 В частности: 
 
 1. ARIMA (Autoregressive Integrated Moving Average)
-2. SARIMA (Seasonal Autoregressive Integrated Moving Average)
-3. VAR (Vector Autoregression) 
-4. BVAR (Baesian Vector Autoregression) 
-5. Exponential Smoothing 
-6. Модель с трансформерами (с энкодер-декодерной архитектурой). 
+2. SARIMAX 
+3. BVAR (Baesian Vector Autoregression) (не удалось реализовать)
+4. Exponential Smoothing
+5. Модели класса CatBoost 
+
 
 Включение определенных лагов в модели будет обоснованно после визуального и корреляционного анализа. В модели в качестве признаков будет включено текущее значение ключевой ставки. 
 
