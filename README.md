@@ -185,15 +185,6 @@ Holt-Winter Model
 
 Прогноз с и без регрессора не отличается. 
 
-Обобщение результатов
-| ряд | лучшая модель | SMAPE |
-| --- | --- | --- |
-| bank_liquidity | sarimax  | 41.27% |
-| credits_firms | catboost per segment | 9.15% |
-| credits_people | arima | 30.78% |
-| deposits_people | holt-winter | 1.80% |
-| max_deposit_rate | naive | 5.54% |
-| overdue_credits_people | naive | 29.3% |
 
 ### Выводы 
 Обобщение результатов
