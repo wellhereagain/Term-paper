@@ -161,13 +161,17 @@ ACF
 - Exponential Smoothing models: Holt Model, Holt-Winter Model
 
 Holt Model
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt.png)
 
 
 Holt-Winter Model 
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt_wiinter.png)
 
-**Выводы**
+### Выводы 
+
+
 Самый успешный класс моделей по агрегированным метрикам - модели с экпоненциальным сглаживанием, , 
 
 Почему такие вялые результаты и что можно улучшить: 
