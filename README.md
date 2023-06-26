@@ -161,7 +161,7 @@ Holt Model
 
 
 Holt-Winter Model 
-![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt_winter.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt_wiinter.png)
 
 **Выводы**
 Самый успешный класс моделей по агрегированным метрикам - модели с экпоненциальным сглаживанием, , 
