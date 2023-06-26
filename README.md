@@ -141,17 +141,21 @@ ACF
 - CatBoostPerSegment Model
 
 С учетом ставки
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ps.png)
 
 Без учета ставки
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ps_without.png)
 
 - CatBoostMultisegment Model
 
 С учетом ставки
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ms.png)
 
 Без учета ставки
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ms_without.png)
   
 - Exponential Smoothing models: Holt Model, Holt-Winter Model
