@@ -131,6 +131,8 @@ ACF
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/sarimax.png)
 
+Модель SARIMAX показала лучшую предсказательную силу в предсказании bank_liquidity, в остальном - хуже, чем наивная модель. Прогноз с и без регрессора не отличается. 
+
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/sarimax_forecast_1.png)
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/sarimax_forecast_2.png)
 
@@ -138,15 +140,23 @@ ACF
   
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/autoarima.png)
 
+Модель AUTOARIMA показала себя лучше, чем SARIMAX, во всем, кроме bank_liquidity, в остальном - хуже, чем наивная модель.Если сравнивать с наивной, то ошибка хуже везде, кроме как в credits_people
+Прогноз с и без регрессора не отличается. 
+
+
 - CatBoostPerSegment Model
 
 С учетом ставки
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ps.png)
 
+Результаты сопоставимы с AUTOARIMA, лучше чем Naive только в credits_people
+
 Без учета ставки
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ps_without.png)
+
+как мы видим, включение ключевой ставки помогло улучшить прогноз для каждого ряда 
 
 - CatBoostMultisegment Model
 
@@ -154,25 +164,49 @@ ACF
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ms.png)
 
+Прогноз получится сильно хуже, чем у CatBoostPerSegment
+
 Без учета ставки
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ms_without.png)
+
+здесь также включение ключевой ставки помогло улучшить прогноз для каждого ряда
   
 - Exponential Smoothing models: Holt Model, Holt-Winter Model
 
 Holt Model
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt.png)
-
+Прогноз с и без регрессора не отличается. 
 
 Holt-Winter Model 
 
 ![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt_wiinter.png)
 
+Прогноз с и без регрессора не отличается. 
+
+Обобщение результатов
+| ряд | лучшая модель | SMAPE |
+| --- | --- | --- |
+| bank_liquidity | sarimax  | 41.27% |
+| credits_firms | catboost per segment | 9.15% |
+| credits_people | arima | 30.78% |
+| deposits_people | holt-winter | 1.80% |
+| max_deposit_rate | naive | 5.54% |
+| overdue_credits_people | naive | 29.3% |
+
 ### Выводы 
+Обобщение результатов
+| ряд | лучшая модель | SMAPE |
+| --- | --- | --- |
+| bank_liquidity | sarimax  | 41.27% |
+| credits_firms | catboost per segment | 9.15% |
+| credits_people | arima | 30.78% |
+| deposits_people | holt-winter | 1.80% |
+| max_deposit_rate | naive | 5.54% |
+| overdue_credits_people | naive | 29.3% |
 
-
-Самый успешный класс моделей по агрегированным метрикам - модели с экпоненциальным сглаживанием, , 
+Получается, что наивная модель успешнее в предсказании max_deposit_rate и overdue_credits_people в прогнозе на 1 шаг.
 
 Почему такие вялые результаты и что можно улучшить: 
 
