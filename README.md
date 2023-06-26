@@ -87,48 +87,81 @@
 - CatBoostMultisegment Model (лаги 1-2)
 - Exponential Smoothing models: Holt Model, Holt-Winter Model  (лаги 1-3)
 
-Каждая из рассматриваемых моделей строилась с регрессором - ключевой ставкой - и без нее. Таким образом, влияние ключевой ставки будет рассмотрено через изменение ошибки прогноза. 
-
-Как мы изменяем качество моделей: SMAPE, MAE
-
-Для переменных запаса (Объем неплатежей по кредитам физических лиц, Объемы привлеченных депозитов в огранизациях, Объемы выданных кредитов в разбивке физические лица/огранизации) мы перешли к разностям, чтобы устранить нестационарность
 
 **Разведывательный анализ**
 
 - Распределения данных
 
-**Изначальные** 
+Изначальные 
 
-![Image alt](https://github.com/{wellhereagain}/{Term-papar}/{blob}/{main}/initial_dist_1.png)
-![Image alt](https://github.com/{wellhereagain}/{Term-papar}/{blob}/{main}/initial_dist_2.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/initial_dist_1.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/initial_dist_2.png)
 
+Сезонность
 
-**После перехода в разности**
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/initial_seas_1.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/initial_seas_2.png)
 
-- ACF
+Тренд
 
-**После перехода в разности**
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/initial_trend_1.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/initial_trend_2.png)
 
-- Сезонность
+Даже визуальным анализом заметно, что некоторые ряды имеют нестационарность. Для переменных запаса (Объем неплатежей по кредитам физических лиц, Объемы привлеченных депозитов в огранизациях, Объемы выданных кредитов в разбивке физические лица/огранизации) мы перешли к разностям, чтобы устранить нестационарность
 
-**После перехода в разности**
+После перехода в разности
 
-- Тренд
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/dist_1.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/dist_2.png)
 
-**После перехода в разности**
+ACF
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/acf_1.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/acf_2.png)
 
+**Результаты**
+
+Каждая из рассматриваемых моделей строилась с регрессором - ключевой ставкой - и без нее. Таким образом, влияние ключевой ставки будет рассмотрено через изменение ошибки прогноза. 
+
+Как мы изменяем качество моделей: SMAPE, MAE
 - Naive model
-  
+
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/naive_model.png)
+
 - SARIMAX
 
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/sarimax.png)
+
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/sarimax_forecast_1.png)
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/sarimax_forecast_2.png)
+
 - AUTOARIMA
+  
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/autoarima.png)
 
 - CatBoostPerSegment Model
-  
-- CatBoostMultisegment Model
-  
-- Exponential Smoothing models: Holt Model, Holt-Winter Model 
 
+С учетом ставки
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ps.png)
+
+Без учета ставки
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ps_without.png)
+
+- CatBoostMultisegment Model
+
+С учетом ставки
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ms.png)
+
+Без учета ставки
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/catboost_ms_without.png)
+  
+- Exponential Smoothing models: Holt Model, Holt-Winter Model
+
+Holt Model
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt.png)
+
+
+Holt-Winter Model 
+![Image alt](https://github.com/wellhereagain/Term-paper/blob/main/holt_winter.png)
 
 **Выводы**
 Самый успешный класс моделей по агрегированным метрикам - модели с экпоненциальным сглаживанием, , 
